@@ -4,9 +4,9 @@
 # Archon never auto-merges a change to it. Every key is described in
 # archon-v3's docs/workflow-reference.md.
 tracker:
-  kind: linear
+  kind: chronology
   provider:
-    # Linear project "XO".
+    # Work Registry project "XO".
     project_id: "85be256c-6050-41b4-a591-244b322c4a8f"
 hooks:
   # Each attempt starts from a fresh checkout; install dependencies so the
@@ -75,10 +75,10 @@ archon:
   models:
     # Profiles come from the service's shared model catalogue (archon-v3
     # docs/operations.md, Models); a Model label on an issue picks another.
-    default: sol
-    fallback: opus
+    default: opus
+    fallback: sol
 ---
-You are working on XO, Linear issue {{ issue.identifier }}: {{ issue.title }}.
+You are working on XO, issue {{ issue.identifier }}: {{ issue.title }}.
 {% if attempt %}
 This is attempt {{ attempt }}. Earlier attempts were discarded, and this workspace is a fresh checkout.
 {% endif %}
